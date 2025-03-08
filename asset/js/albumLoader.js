@@ -98,7 +98,10 @@ function displayAlbums() {
     
     // Display albums in both tables
     sortedAlbums.forEach((album, index) => {
-        const row = createAlbumRow(album, index);
+        // Find the original index of this album in the allAlbums array
+        const originalIndex = allAlbums.findIndex(a => a.name === album.name);
+        
+        const row = createAlbumRow(album, originalIndex);
         
         // Add to all albums table
         allAlbumsBody.appendChild(row.cloneNode(true));
