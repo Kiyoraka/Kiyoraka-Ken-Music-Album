@@ -22,11 +22,11 @@
             
             <div class="stats">
                 <div class="stat-card">
-                    <h3>5</h3>
+                    <h3 id="total-albums">0</h3>
                     <p>Total Albums</p>
                 </div>
                 <div class="stat-card">
-                    <h3>42</h3>
+                    <h3 id="total-songs">0</h3>
                     <p>Total Songs</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@
             <div class="glass-card">
                 <h2>Recent Albums</h2>
                 <div class="table-container">
-                    <table>
+                    <table id="recent-albums-table">
                         <thead>
                             <tr>
                                 <th>Album Name</th>
@@ -43,39 +43,8 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Summer Vibes</td>
-                                <td>12</td>
-                                <td>2025-01-15</td>
-                                <td>
-                                    <button class="action-btn" data-target="songs-1">View Songs</button>
-                                    <div class="song-list" id="songs-1">
-                                        <ul>
-                                            <li>Summer Nights</li>
-                                            <li>Ocean Breeze</li>
-                                            <li>Sunset Dreams</li>
-                                            <li>Beach Party</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Midnight Tales</td>
-                                <td>8</td>
-                                <td>2024-11-20</td>
-                                <td>
-                                    <button class="action-btn" data-target="songs-2">View Songs</button>
-                                    <div class="song-list" id="songs-2">
-                                        <ul>
-                                            <li>Moonlight Sonata</li>
-                                            <li>Starry Night</li>
-                                            <li>Quiet Streets</li>
-                                            <li>Midnight Hour</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                        <tbody id="recent-albums-body">
+                            <!-- Recent albums will be loaded here -->
                         </tbody>
                     </table>
                 </div>
@@ -97,109 +66,8 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Summer Vibes</td>
-                                <td>12</td>
-                                <td>2025-01-15</td>
-                                <td>
-                                    <button class="action-btn" data-target="songs-3">View Songs</button>
-                                    <div class="song-list" id="songs-3">
-                                        <ul>
-                                            <li>Summer Nights</li>
-                                            <li>Ocean Breeze</li>
-                                            <li>Sunset Dreams</li>
-                                            <li>Beach Party</li>
-                                            <li>Tropical Rain</li>
-                                            <li>Sand Castles</li>
-                                            <li>Island Hopping</li>
-                                            <li>Sunny Days</li>
-                                            <li>Under the Palm</li>
-                                            <li>Warm Evenings</li>
-                                            <li>Coastal Drive</li>
-                                            <li>Ocean Waves</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Midnight Tales</td>
-                                <td>8</td>
-                                <td>2024-11-20</td>
-                                <td>
-                                    <button class="action-btn" data-target="songs-4">View Songs</button>
-                                    <div class="song-list" id="songs-4">
-                                        <ul>
-                                            <li>Moonlight Sonata</li>
-                                            <li>Starry Night</li>
-                                            <li>Quiet Streets</li>
-                                            <li>Midnight Hour</li>
-                                            <li>Dark Skies</li>
-                                            <li>Night Owl</li>
-                                            <li>Dream Catcher</li>
-                                            <li>Silent Echo</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Acoustic Sessions</td>
-                                <td>10</td>
-                                <td>2024-08-05</td>
-                                <td>
-                                    <button class="action-btn" data-target="songs-5">View Songs</button>
-                                    <div class="song-list" id="songs-5">
-                                        <ul>
-                                            <li>Unplugged Love</li>
-                                            <li>Wooden Strings</li>
-                                            <li>Raw Emotions</li>
-                                            <li>Simple Melody</li>
-                                            <li>Coffeehouse</li>
-                                            <li>Acoustic Dreams</li>
-                                            <li>Natural Sound</li>
-                                            <li>Calm Evening</li>
-                                            <li>Soft Notes</li>
-                                            <li>Gentle Strumming</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Electric Vibes</td>
-                                <td>7</td>
-                                <td>2024-05-12</td>
-                                <td>
-                                    <button class="action-btn" data-target="songs-6">View Songs</button>
-                                    <div class="song-list" id="songs-6">
-                                        <ul>
-                                            <li>Power Surge</li>
-                                            <li>Electric Dreams</li>
-                                            <li>Neon Lights</li>
-                                            <li>Circuit Breaker</li>
-                                            <li>Digital Age</li>
-                                            <li>Voltage</li>
-                                            <li>Amplified</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>First Album</td>
-                                <td>5</td>
-                                <td>2023-12-01</td>
-                                <td>
-                                    <button class="action-btn" data-target="songs-7">View Songs</button>
-                                    <div class="song-list" id="songs-7">
-                                        <ul>
-                                            <li>Beginning</li>
-                                            <li>First Steps</li>
-                                            <li>New Journey</li>
-                                            <li>Start Line</li>
-                                            <li>Day One</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                        <tbody id="all-albums-body">
+                            <!-- All albums will be loaded here -->
                         </tbody>
                     </table>
                 </div>
@@ -207,6 +75,58 @@
         </div>
     </div>
 
+    <!-- Album Popup Modal -->
+    <div id="album-modal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            
+            <div class="modal-tabs">
+                <button class="tab-button active" data-tab="cover-tab">Album Cover</button>
+                <button class="tab-button" data-tab="songs-tab">Songs</button>
+            </div>
+            
+            <div id="cover-tab" class="tab-content">
+                <div class="album-info">
+                    <div class="album-cover-container">
+                        <img id="album-cover" src="" alt="Album Cover">
+                    </div>
+                    <div class="album-details">
+                        <h2 id="album-title"></h2>
+                        <p>Release Date: <span id="album-release-date"></span></p>
+                        <p>Total Songs: <span id="album-song-count"></span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="songs-tab" class="tab-content hidden">
+                <table class="songs-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Style</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="album-songs-body">
+                        <!-- Songs will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lyrics Modal -->
+    <div id="lyrics-modal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <h2 id="song-title"></h2>
+            <p id="song-style"></p>
+            <div id="song-lyrics" class="lyrics-content"></div>
+        </div>
+    </div>
+
+    <script src="asset/js/albumLoader.js"></script>
     <script src="asset/js/main.js"></script>
 </body>
 </html>
