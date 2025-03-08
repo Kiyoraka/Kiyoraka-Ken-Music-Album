@@ -54,6 +54,25 @@
         <!-- Albums Content -->
         <div id="albums-content" class="hidden">
             <h1 class="glass-card">Album List</h1>
+
+            <!-- Add this right after the Album List heading -->
+            <div class="search-filter-container glass-card">
+                <div class="search-box">
+                    <input type="text" id="album-search" placeholder="Search albums...">
+                    <button id="search-btn" class="action-btn">Search</button>
+                </div>
+                <div class="filter-options">
+                    <select id="sort-by" class="filter-select">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="most-songs">Most Songs</option>
+                        <option value="least-songs">Least Songs</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                    </select>
+                    <button id="apply-filter" class="action-btn">Apply Filter</button>
+                </div>
+            </div>
             
             <div class="glass-card">
                 <div class="table-container">
