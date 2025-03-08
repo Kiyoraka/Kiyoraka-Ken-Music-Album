@@ -8,10 +8,7 @@ function loadAlbums() {
         // Define the album directories
         const albumDirectories = [
             'Melody Of Blue Sky',
-            'Sunset Dreams',
-            'Midnight Tales',
-            'Acoustic Sessions',
-            'Electric Vibes'
+            'Crimson Flower Apocalypse',
         ];
         
         // We'll use a counter to know when all albums are loaded
