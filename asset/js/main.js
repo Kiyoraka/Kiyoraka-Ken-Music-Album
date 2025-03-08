@@ -24,30 +24,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Song list toggle
-    const actionButtons = document.querySelectorAll('.action-btn');
+    // Modal tab navigation
+    const modalTabButtons = document.querySelectorAll('.tab-button');
     
-    actionButtons.forEach(button => {
+    modalTabButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const targetId = this.getAttribute('data-target');
-            const songList = document.getElementById(targetId);
+            // Remove active class from all buttons
+            modalTabButtons.forEach(btn => btn.classList.remove('active'));
             
-            // Close all other song lists
-            document.querySelectorAll('.song-list.active').forEach(list => {
-                if (list.id !== targetId) {
-                    list.classList.remove('active');
-                }
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
             });
             
-            // Toggle current song list
-            songList.classList.toggle('active');
-            
-            // Update button text
-            if (songList.classList.contains('active')) {
-                this.textContent = 'Hide Songs';
-            } else {
-                this.textContent = 'View Songs';
-            }
+            // Show the target tab content
+            const targetId = this.getAttribute('data-tab');
+            document.getElementById(targetId).classList.remove('hidden');
         });
+    });
+    
+    // Close modals when clicking the X button
+    document.querySelectorAll('.close-modal').forEach(closeBtn => {
+        closeBtn.addEventListener('click', function() {
+            this.closest('.modal').style.display = 'none';
+        });
+    });
+    
+    // Close modals when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+        }
     });
 });
