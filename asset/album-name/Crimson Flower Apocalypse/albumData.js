@@ -1,10 +1,10 @@
 // Define album data
-const melody_of_blue_sky_data = {
-    folder: "Melody Of Blue Sky",
-    name: "Melody Of Blue Sky",
+const crimson_flower_apocalypse = {
+    folder: "Crimson Flower Apocalypse",
+    name: "Crimson Flower Apocalypse",
     releaseDate: "2025-02-15",
-    totalSongs: 5,
-    coverArt: "asset/album-name/Melody Of Blue Sky/cover.jpg",
+    totalSongs: 7,
+    coverArt: "asset/album-name/Crimson Flower Apocalypse/cover.jpg",
     songsData: [
         {
             title: "Blue Horizons",
@@ -30,6 +30,16 @@ const melody_of_blue_sky_data = {
             title: "Aerial View",
             style: "Atmospheric",
             lyrics: "Far below, the world\nSpreads like a detailed map\nPerspective transformed\n\nMountains turn to bumps\nRivers to silver ribbons\nCities to pixels\n\nElevated sight\nReveals our true dimension\nHumble existence"
+        },
+        {
+            title: "Dawn Chorus",
+            style: "Folk",
+            lyrics: "Morning symphony\nBirds welcome the rising sun\nSky turns pink and gold\n\nDew-kissed grass glistens\nAs darkness retreats slowly\nNew day emerges\n\nHope rises with light\nPromise of fresh beginnings\nSky heralds rebirth"
+        },
+        {
+            title: "Sunset Serenade",
+            style: "Ballad",
+            lyrics: "Day bids farewell now\nSun sinks into horizon\nPainting skies aflame\n\nOrange melts to red\nPurple deepens into night\nStars begin to wake\n\nBeauty in endings\nReminds us that all things pass\nYet return again"
         }
     ]
 };
