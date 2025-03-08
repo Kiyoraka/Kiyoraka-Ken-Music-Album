@@ -19,16 +19,39 @@ function loadAlbums() {
             const script = document.createElement('script');
             script.src = `asset/album-name/${directory}/albumData.js`;
             
-            // When the script loads, it will define a global variable with album data
+            // When the script loads successfully
             script.onload = function() {
-                // The loaded script will define a global variable with the directory name
-                const albumData = window[convertToVariableName(directory)];
-                allAlbums.push(albumData);
-                totalSongs += albumData.totalSongs;
+                // Get the variable name we expect to find
+                const varName = convertToVariableName(directory);
+                
+                // Check if the variable exists in window
+                if (window[varName]) {
+                    const albumData = window[varName];
+                    allAlbums.push(albumData);
+                    totalSongs += albumData.totalSongs;
+                } else {
+                    console.warn(`Album data for "${directory}" was loaded but variable "${varName}" was not found`);
+                }
                 
                 loadedCount++;
                 
                 // If all albums are loaded, update the UI
+                if (loadedCount === albumDirectories.length) {
+                    // Update dashboard stats
+                    document.getElementById('total-albums').textContent = allAlbums.length;
+                    document.getElementById('total-songs').textContent = totalSongs;
+                    
+                    // Display albums in tables
+                    displayAlbums();
+                }
+            };
+            
+            // Handle script loading errors
+            script.onerror = function() {
+                console.error(`Failed to load album data for "${directory}"`);
+                loadedCount++;
+                
+                // If all albums are loaded (or failed), update the UI
                 if (loadedCount === albumDirectories.length) {
                     // Update dashboard stats
                     document.getElementById('total-albums').textContent = allAlbums.length;
@@ -61,6 +84,12 @@ function displayAlbums() {
     // Clear existing content
     recentAlbumsBody.innerHTML = '';
     allAlbumsBody.innerHTML = '';
+    
+    // Only proceed if we have albums to show
+    if (allAlbums.length === 0) {
+        console.warn("No albums were loaded successfully");
+        return;
+    }
     
     // Sort albums by release date (newest first)
     const sortedAlbums = [...allAlbums].sort((a, b) => 
