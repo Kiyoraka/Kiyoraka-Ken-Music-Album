@@ -159,7 +159,6 @@ function openAlbumModal(album) {
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>${song.title}</td>
-            <td>${song.style}</td>
             <td>
                 <button class="action-btn view-lyrics-btn" data-song-index="${index}">View Lyrics</button>
             </td>
