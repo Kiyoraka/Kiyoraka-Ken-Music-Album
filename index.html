@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Dashboard</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">Music Dashboard</div>
+        <ul class="menu">
+            <li><a href="#" class="active" data-target="dashboard-content"><span>Dashboard</span></a></li>
+            <li><a href="#" data-target="albums-content"><span>Album List</span></a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <!-- Dashboard Content -->
+        <div id="dashboard-content">
+            <h1 class="glass-card">Dashboard Overview</h1>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>5</h3>
+                    <p>Total Albums</p>
+                </div>
+                <div class="stat-card">
+                    <h3>42</h3>
+                    <p>Total Songs</p>
+                </div>
+            </div>
+            
+            <div class="glass-card">
+                <h2>Recent Albums</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Album Name</th>
+                                <th>Songs</th>
+                                <th>Release Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Summer Vibes</td>
+                                <td>12</td>
+                                <td>2025-01-15</td>
+                                <td>
+                                    <button class="action-btn" data-target="songs-1">View Songs</button>
+                                    <div class="song-list" id="songs-1">
+                                        <ul>
+                                            <li>Summer Nights</li>
+                                            <li>Ocean Breeze</li>
+                                            <li>Sunset Dreams</li>
+                                            <li>Beach Party</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Midnight Tales</td>
+                                <td>8</td>
+                                <td>2024-11-20</td>
+                                <td>
+                                    <button class="action-btn" data-target="songs-2">View Songs</button>
+                                    <div class="song-list" id="songs-2">
+                                        <ul>
+                                            <li>Moonlight Sonata</li>
+                                            <li>Starry Night</li>
+                                            <li>Quiet Streets</li>
+                                            <li>Midnight Hour</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Albums Content -->
+        <div id="albums-content" class="hidden">
+            <h1 class="glass-card">Album List</h1>
+            
+            <div class="glass-card">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Album Name</th>
+                                <th>Songs</th>
+                                <th>Release Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Summer Vibes</td>
+                                <td>12</td>
+                                <td>2025-01-15</td>
+                                <td>
+                                    <button class="action-btn" data-target="songs-3">View Songs</button>
+                                    <div class="song-list" id="songs-3">
+                                        <ul>
+                                            <li>Summer Nights</li>
+                                            <li>Ocean Breeze</li>
+                                            <li>Sunset Dreams</li>
+                                            <li>Beach Party</li>
+                                            <li>Tropical Rain</li>
+                                            <li>Sand Castles</li>
+                                            <li>Island Hopping</li>
+                                            <li>Sunny Days</li>
+                                            <li>Under the Palm</li>
+                                            <li>Warm Evenings</li>
+                                            <li>Coastal Drive</li>
+                                            <li>Ocean Waves</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Midnight Tales</td>
+                                <td>8</td>
+                                <td>2024-11-20</td>
+                                <td>
+                                    <button class="action-btn" data-target="songs-4">View Songs</button>
+                                    <div class="song-list" id="songs-4">
+                                        <ul>
+                                            <li>Moonlight Sonata</li>
+                                            <li>Starry Night</li>
+                                            <li>Quiet Streets</li>
+                                            <li>Midnight Hour</li>
+                                            <li>Dark Skies</li>
+                                            <li>Night Owl</li>
+                                            <li>Dream Catcher</li>
+                                            <li>Silent Echo</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Acoustic Sessions</td>
+                                <td>10</td>
+                                <td>2024-08-05</td>
+                                <td>
+                                    <button class="action-btn" data-target="songs-5">View Songs</button>
+                                    <div class="song-list" id="songs-5">
+                                        <ul>
+                                            <li>Unplugged Love</li>
+                                            <li>Wooden Strings</li>
+                                            <li>Raw Emotions</li>
+                                            <li>Simple Melody</li>
+                                            <li>Coffeehouse</li>
+                                            <li>Acoustic Dreams</li>
+                                            <li>Natural Sound</li>
+                                            <li>Calm Evening</li>
+                                            <li>Soft Notes</li>
+                                            <li>Gentle Strumming</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Electric Vibes</td>
+                                <td>7</td>
+                                <td>2024-05-12</td>
+                                <td>
+                                    <button class="action-btn" data-target="songs-6">View Songs</button>
+                                    <div class="song-list" id="songs-6">
+                                        <ul>
+                                            <li>Power Surge</li>
+                                            <li>Electric Dreams</li>
+                                            <li>Neon Lights</li>
+                                            <li>Circuit Breaker</li>
+                                            <li>Digital Age</li>
+                                            <li>Voltage</li>
+                                            <li>Amplified</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>First Album</td>
+                                <td>5</td>
+                                <td>2023-12-01</td>
+                                <td>
+                                    <button class="action-btn" data-target="songs-7">View Songs</button>
+                                    <div class="song-list" id="songs-7">
+                                        <ul>
+                                            <li>Beginning</li>
+                                            <li>First Steps</li>
+                                            <li>New Journey</li>
+                                            <li>Start Line</li>
+                                            <li>Day One</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="asset/js/main.js"></script>
+</body>
+</html>
