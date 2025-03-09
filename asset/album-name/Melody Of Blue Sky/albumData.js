@@ -2,7 +2,7 @@
 window.melody_of_blue_sky_data = {
     folder: "Melody Of Blue Sky",
     name: "Melody Of Blue Sky",
-    releaseDate: "2025-02-27",
+    releaseDate: "2025-01-27",
     totalSongs: 5,
     coverArt: "asset/album-name/Melody Of Blue Sky/Art.jpg",
     songsData: [
