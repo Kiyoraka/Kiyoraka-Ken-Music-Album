@@ -23,6 +23,7 @@ function loadAlbums() {
             'Chronicles Of The Azure Guardian',
             'Secangkir Kehidupan',
             'Shadow Flower Symphony',
+            'Collapse and Rebirth',
         ];
         
         // We'll use a counter to know when all albums are loaded

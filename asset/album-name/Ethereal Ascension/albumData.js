@@ -2,7 +2,7 @@
 window.ethereal_ascension_data = {
     folder: "Ethereal Ascension",
     name: "Ethereal Ascension",
-    releaseDate: "2025-04-15",
+    releaseDate: "2025-02-13",
     totalSongs: 9,
     coverArt: "asset/album-name/Ethereal Ascension/Art.jpg",
     songsData: [
