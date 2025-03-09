@@ -1,8 +1,8 @@
 // Define album data - making sure it's in the global (window) scope
-window.syair_kebun_ilahi_data = {
+window.syair_taman_ilahi_data = {
     folder: "Syair Taman Ilahi",
     name: "Syair Taman Ilahi",
-    releaseDate: "2025-08-10",
+    releaseDate: "2025-02-25",
     totalSongs: 7,
     coverArt: "asset/album-name/Syair Taman Ilahi/Art.jpg",
     songsData: [
