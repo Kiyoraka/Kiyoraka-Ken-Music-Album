@@ -19,6 +19,7 @@ function loadAlbums() {
         const albumDirectories = [
             'Melody Of Blue Sky',
             'Crimson Flower Apocalypse',
+            'Ethereal Ascension',
         ];
         
         // We'll use a counter to know when all albums are loaded
