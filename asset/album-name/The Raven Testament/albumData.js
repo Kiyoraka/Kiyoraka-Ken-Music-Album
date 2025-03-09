@@ -1,10 +1,10 @@
 // Define album data - making sure it's in the global (window) scope
-window.the_ravens_testament_data = {
-    folder: "The Raven's Testament",
-    name: "The Raven's Testament",
-    releaseDate: "2025-09-05",
+window.the_raven_testament_data = {
+    folder: "The Raven Testament",
+    name: "The Raven Testament",
+    releaseDate: "2025-02-20",
     totalSongs: 7,
-    coverArt: "asset/album-name/The Raven's Testament/Art.jpg",
+    coverArt: "asset/album-name/The Raven Testament/Art.jpg",
     songsData: [
         {
             title: "Ravens at Dawn",
