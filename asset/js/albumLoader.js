@@ -20,6 +20,7 @@ function loadAlbums() {
             'Melody Of Blue Sky',
             'Crimson Flower Apocalypse',
             'Ethereal Ascension',
+            'Chronicles Of The Azure Guardian',
         ];
         
         // We'll use a counter to know when all albums are loaded
