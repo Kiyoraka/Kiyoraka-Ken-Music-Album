@@ -22,6 +22,7 @@ function loadAlbums() {
             'Ethereal Ascension',
             'Chronicles Of The Azure Guardian',
             'Secangkir Kehidupan',
+            'Shadow Flower Symphony',
         ];
         
         // We'll use a counter to know when all albums are loaded
