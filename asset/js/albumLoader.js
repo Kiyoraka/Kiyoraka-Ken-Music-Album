@@ -25,6 +25,8 @@ function loadAlbums() {
             'Shadow Flower Symphony',
             'Collapse and Rebirth',
             'Forbidden Covenant',
+            'Syair Taman Ilahi',
+            'The Raven Testament',
         ];
         
         // We'll use a counter to know when all albums are loaded
