@@ -37,9 +37,9 @@ window.shadow_flower_symphony_data = {
             lyrics: "[Verse 1]\n漆黒の衣纏い\n影から影へと歩む\n千の鳥となった心は\nもう迷わない\n\n[Pre-Chorus]\n壊れた街が見守る\n私の変容の儀式\n\n[Chorus]\n解き放て この身を\n黒い翼になって\n朽ちた世界の果てで\n新たな物語を描く\n影になる覚悟は出来た\n\n[Verse 2]\n灰色の地平の彼方\n記憶が風に溶けてく\n人であることを捨てて\n闇を抱く\n\n[Bridge]\nさぁ、最後の一歩を\n躊躇いを捨てて\nこの世界の檻から\n羽ばたこう\n\n[Chorus]\n解き放て この身を\n黒い翼になって\n朽ちた世界の果てで\n新たな物語を描く\n影になる覚悟は出来た\n\n[Outro]\n私は自由になる\n千の影となって"
         },
         {
-            title: "永遠の黒翼交響曲 (Eien no Kokuyoku Kōkyōkyoku - Eternal Black Wings Symphony)",
+            title: "永遠の黒翼シンフォニー (Eien no Kokuyoku Kōkyōkyoku - Eternal Black Wings Symphony)",
             style: "Epic orchestral J-rock, Full symphonic arrangement, Multiple choir layers, Heavy electronic elements, Dramatic Female vocals, Traditional Japanese instruments, Cinematic climax",
-            lyrics: "[Verse 1]\n終わりの空に昇る\n千の影となって\n人間の殻を破り\n闇と一つになる\n\n[Pre-Chorus]\nさよなら　古い世界\nこんにちは　新しい私\n\n[Chorus]\n永遠の翼広げ\n朽ちた街を超えて\nもう戻ることはない\nこの自由を選んだから\n黒い鳥となって舞う\n\n[Verse 2]\n記憶は風に溶けて\n新しい物語が始まる\n壊れた世界の果てで\n私は目覚めた\n\n[Bridge]\n全ての痛みから\n解放される時\n千の影となった私は\n完全な自由を知る\n\n[Final Chorus]\n永遠の翼広げ\n朽ちた街を超えて\nもう戻ることはない\nこの自由を選んだから\n黒い鳥となって舞う\n\n[Outro]\n私は永遠に\n影の交響曲と共に"
+            lyrics: "[Verse 1]\n終わりの空に昇る\n千の影となって\n人間の殻を破り\n闇と一つになる\n\n[Pre-Chorus]\nさよなら　古い世界\nこんにちは　新しい私\n\n[Chorus]\n永遠の翼広げ\n朽ちた街を超えて\nもう戻ることはない\nこの自由を選んだから\n黒い鳥となって舞う\n\n[Verse 2]\n記憶は風に溶けて\n新しい物語が始まる\n壊れた世界の果てで\n私は目覚めた\n\n[Bridge]\n全ての痛みから\n解放される時\n千の影となった私は\n完全な自由を知る\n\n[Final Chorus]\n永遠の翼広げ\n朽ちた街を超えて\nもう戻ることはない\nこの自由を選んだから\n黒い鳥となって舞う\n\n[Outro]\n私は永遠に\n影のシンフォニーと共に"
         }
     ]
 };

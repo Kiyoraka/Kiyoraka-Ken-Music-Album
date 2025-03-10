@@ -27,6 +27,7 @@ function loadAlbums() {
             'Forbidden Covenant',
             'Syair Taman Ilahi',
             'The Raven Testament',
+            'Whispers in the Dark',
         ];
         
         // We'll use a counter to know when all albums are loaded
