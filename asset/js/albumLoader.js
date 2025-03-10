@@ -28,6 +28,7 @@ function loadAlbums() {
             'Syair Taman Ilahi',
             'The Raven Testament',
             'Whispers in the Dark',
+            'Fractured Reflections',
         ];
         
         // We'll use a counter to know when all albums are loaded
