@@ -29,6 +29,8 @@ function loadAlbums() {
             'The Raven Testament',
             'Whispers in the Dark',
             'Fractured Reflections',
+            'Silent Shadows',
+            'Voices in the Dark',
         ];
         
         // We'll use a counter to know when all albums are loaded
