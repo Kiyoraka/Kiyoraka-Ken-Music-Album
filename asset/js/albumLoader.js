@@ -31,6 +31,11 @@ function loadAlbums() {
             'Fractured Reflections',
             'Silent Shadows',
             'Voices in the Dark',
+            'Dream Archaeology',
+            'Rose Thorns',
+            'Cybernetic Heart',
+            'The Last Radio Station',
+            'Ballads of Blessing',
         ];
         
         // We'll use a counter to know when all albums are loaded

@@ -90,8 +90,29 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!-- Add this after the album table div but before the closing div for glass-card -->
+                <div class="pagination-container">
+                    <div class="showing-info" id="showing-info">
+                        Showing 1-10 of 14 albums
+                    </div>
+                    <div class="pagination-controls">
+                        <button id="first-page" class="action-btn">First</button>
+                        <button id="prev-page" class="action-btn">Previous</button>
+                        <span class="page-info">Page <span id="current-page">1</span> of <span id="total-pages">2</span></span>
+                        <button id="next-page" class="action-btn">Next</button>
+                        <button id="last-page" class="action-btn">Last</button>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <footer class="footer">
+            <div class="copyright">
+                © 2025 Kiyoraka Ken. All Rights Reserved.
+            </div>
+        </footer>
+
     </div>
 
     <!-- Album Popup Modal -->
@@ -144,6 +165,7 @@
             <div id="song-lyrics" class="lyrics-content"></div>
         </div>
     </div>
+    
 
     <script src="asset/js/albumLoader.js"></script>
     <script src="asset/js/main.js"></script>

@@ -2,7 +2,7 @@
 window.fractured_reflections_data = {
     folder: "Fractured Reflections",
     name: "Fractured Reflections",
-    releaseDate: "2025-03-15",
+    releaseDate: "2025-03-16",
     totalSongs: 7,
     coverArt: "asset/album-name/Fractured Reflections/Art.jpg",
     songsData: [

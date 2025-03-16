@@ -2,7 +2,7 @@
 window.silent_shadows_data = {
     folder: "Silent Shadows",
     name: "Silent Shadows",
-    releaseDate: "2025-03-18",
+    releaseDate: "2025-03-19",
     totalSongs: 7,
     coverArt: "asset/album-name/Silent Shadows/Art.jpg",
     songsData: [

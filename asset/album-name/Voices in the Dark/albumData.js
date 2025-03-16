@@ -2,7 +2,7 @@
 window.voices_in_the_dark_data = {
     folder: "Voices in the Dark",
     name: "Voices in the Dark",
-    releaseDate: "2025-03-21",
+    releaseDate: "2025-03-24",
     totalSongs: 7,
     coverArt: "asset/album-name/Voices in the Dark/Art.jpg",
     songsData: [
