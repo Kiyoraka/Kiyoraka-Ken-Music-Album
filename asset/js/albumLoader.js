@@ -36,6 +36,8 @@ function loadAlbums() {
             'Cybernetic Heart',
             'The Last Radio Station',
             'Ballads of Blessing',
+            'Quantum Memories',
+            'Seasons of the Heart',
         ];
         
         // We'll use a counter to know when all albums are loaded
