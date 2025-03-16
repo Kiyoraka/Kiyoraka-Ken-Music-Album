@@ -1,7 +1,7 @@
 // Define album data - making sure it's in the global (window) scope
 window.rose_thorns_data = {
     folder: "Rose Thorns",
-    name: "Rose Thorns",
+    name: "薔薇の棘 (Bara no Toge - Rose Thorns)",
     releaseDate: "2025-04-02",
     totalSongs: 7,
     coverArt: "asset/album-name/Rose Thorns/Art.jpg",

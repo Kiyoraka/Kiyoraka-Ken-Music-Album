@@ -1,7 +1,7 @@
 // Define album data - making sure it's in the global (window) scope
 window.dream_archaeology_data = {
     folder: "Dream Archaeology",
-    name: "Dream Archaeology",
+    name: "夢の考古学 (Yume no Kōkogaku - Dream Archaeology)",
     releaseDate: "2025-03-27",
     totalSongs: 7,
     coverArt: "asset/album-name/Dream Archaeology/Art.jpg",

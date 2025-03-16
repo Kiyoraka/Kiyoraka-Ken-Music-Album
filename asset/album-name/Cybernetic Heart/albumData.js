@@ -1,7 +1,7 @@
 // Define album data - making sure it's in the global (window) scope
 window.cybernetic_heart_data = {
     folder: "Cybernetic Heart",
-    name: "Cybernetic Heart",
+    name: "電子の心臓 (Denshi no Shinzō - Cybernetic Heart)",
     releaseDate: "2025-04-08",
     totalSongs: 7,
     coverArt: "asset/album-name/Cybernetic Heart/Art.jpg",
