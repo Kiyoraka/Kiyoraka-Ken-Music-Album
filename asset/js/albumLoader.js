@@ -15,31 +15,6 @@ function loadAlbums() {
         // Show loading state while initializing
         toggleLoading(true);
         
-        // Define the album directories
-        const albumDirectories = [
-            'Melody Of Blue Sky',
-            'Crimson Flower Apocalypse',
-            'Ethereal Ascension',
-            'Chronicles Of The Azure Guardian',
-            'Secangkir Kehidupan',
-            'Shadow Flower Symphony',
-            'Collapse and Rebirth',
-            'Forbidden Covenant',
-            'Syair Taman Ilahi',
-            'The Raven Testament',
-            'Whispers in the Dark',
-            'Fractured Reflections',
-            'Silent Shadows',
-            'Voices in the Dark',
-            'Dream Archaeology',
-            'Rose Thorns',
-            'Cybernetic Heart',
-            'The Last Radio Station',
-            'Ballads of Blessing',
-            'Quantum Memories',
-            'Seasons of the Heart',
-        ];
-        
         // We'll use a counter to know when all albums are loaded
         let loadedCount = 0;
         
