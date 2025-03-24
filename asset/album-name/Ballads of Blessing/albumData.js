@@ -7,7 +7,7 @@ window.ballads_of_blessing_data = {
     coverArt: "asset/album-name/Ballads of Blessing/Art.jpg",
     songsData: [
         {
-            title: "Songs of Fire",
+            title: "Strength Ablaze",
             style: "Epic folk rock with powerful percussion, driving rhythms, bold vocal delivery, heroic lute solos, war drums, resonant male choir backing, anthemic choruses, and fantasy-inspired battle themes",
             lyrics: "[Verse 1]\nStand tall as mountains, brave ones\nLet fire flow through your veins\nForged in battles long forgotten\nTempered like the finest steel\nMy song ignites the warrior's heart\nAnd makes the mighty kneel\n\n[Chorus]\nRise up with the strength of fire\nLet your muscles burn like flame\nSongs of fire, ever higher\nBreak the chains that hold you down\nSongs of fire, never tire\nWear your strength just like a crown\n\n[Verse 2]\nThe weight you bear seems lighter\nThe sword you wield feels right\nThe mountain's strength I grant you\nThe titan's force bestow\nMy melody of power\nMakes your true potential grow\n\n[Bridge]\nHear the ancient hymn of power\nPassed through bardic lore\nStrength of bear and bull and lion\nHear it now and roar!\n\n[Chorus]\nRise up with the strength of fire\nLet your muscles burn like flame\nSongs of fire, ever higher\nBreak the chains that hold you down\nSongs of fire, never tire\nWear your strength just like a crown\n\n[Outro]\nStrength of mountains\nForce of storms\nPower rising\nTransformed"
         },
