@@ -23,4 +23,5 @@ const albumDirectories = [
     'Seasons of the Heart',
     'Pandemic Diaries',
     'Diary of My White Cat and Me',
+    'Cyber Dreams',
 ];
