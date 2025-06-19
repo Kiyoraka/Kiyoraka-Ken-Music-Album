@@ -2,7 +2,7 @@
 window.cyber_dreams_data = {
     folder: "Cyber Dreams",
     name: "サイバー夢想 (Saibā Musō - Cyber Dreams)",
-    releaseDate: "2025-05-25",
+    releaseDate: "2025-05-23",
     totalSongs: 7,
     coverArt: "asset/album-name/Cyber Dreams/Art.jpg",
     songsData: [
