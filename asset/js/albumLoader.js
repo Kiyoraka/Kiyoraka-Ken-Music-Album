@@ -318,7 +318,10 @@ function performSearch() {
     // Use setTimeout to prevent UI blocking
     setTimeout(() => {
         const searchInput = document.getElementById('album-search');
+        const searchTypeSelect = document.getElementById('search-type');
         const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+        const searchType = searchTypeSelect ? searchTypeSelect.value : 'album';
+        
         lastSearchTerm = searchTerm;
         
         // Reset to page 1 when searching
@@ -330,9 +333,17 @@ function performSearch() {
             performSort(false);
         } else {
             // Filter albums by search term
-            filteredAlbums = allAlbums.filter(album => 
-                album.name.toLowerCase().includes(searchTerm)
-            );
+            if (searchType === 'album') {
+                filteredAlbums = allAlbums.filter(album => 
+                    album.name.toLowerCase().includes(searchTerm)
+                );
+            } else { // searchType === 'song'
+                filteredAlbums = allAlbums.filter(album =>
+                    album.songsData.some(song =>
+                        song.title.toLowerCase().includes(searchTerm)
+                    )
+                );
+            }
             
             // Apply current sort to filtered results
             performSort(false);

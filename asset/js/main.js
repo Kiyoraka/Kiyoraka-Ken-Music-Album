@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger menu for mobile
+    const hamburger = document.querySelector('.hamburger-menu');
+    const sidebar = document.querySelector('.sidebar');
+
+    if (hamburger && sidebar) {
+        hamburger.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+        });
+
+        // Close sidebar when a menu item is clicked
+        sidebar.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+            });
+        });
+    }
+
     // Tab navigation
     const tabLinks = document.querySelectorAll('.sidebar .menu a');
     const contentSections = document.querySelectorAll('.main-content > div');
@@ -57,6 +74,15 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('click', function(event) {
         if (event.target.classList.contains('modal')) {
             event.target.style.display = 'none';
+        }
+    });
+
+    // Close modals when pressing the Escape key
+    window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
         }
     });
 });
