@@ -27,4 +27,5 @@ const albumDirectories = [
     'Golden Romance',
     'Fallen Warrior',
     'Crimson Warrior',
+    'Neon Dreams',
 ];
