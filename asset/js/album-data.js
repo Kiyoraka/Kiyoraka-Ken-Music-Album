@@ -28,4 +28,5 @@ const albumDirectories = [
     'Fallen Warrior',
     'Crimson Warrior',
     'Neon Dreams',
+    'Cyber Warrior',
 ];
