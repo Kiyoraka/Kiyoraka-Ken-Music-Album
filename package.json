@@ -1,0 +1,23 @@
+{
+  "name": "kiyoraka-music-album",
+  "version": "2.0.0",
+  "description": "Kiyoraka Ken Music Album Collection - Automatic discovery with lazy loading",
+  "main": "index.html",
+  "scripts": {
+    "generate": "node scripts/generate-albums.js",
+    "precommit": "npm run generate",
+    "test": "echo \"Opening index.html in browser...\" && start index.html"
+  },
+  "keywords": [
+    "music",
+    "album",
+    "portfolio",
+    "kiyoraka"
+  ],
+  "author": "Kiyoraka Ken",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kiyoraka/Kiyoraka-Ken-Music-Album.git"
+  }
+}

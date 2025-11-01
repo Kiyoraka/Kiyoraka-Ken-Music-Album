@@ -9,85 +9,247 @@ let filteredAlbums = [];
 let lastAppliedFilter = 'newest';
 let lastSearchTerm = '';
 
-// Function to load all albums
+// Lazy loading configuration
+const INITIAL_ALBUM_LOAD_COUNT = 8; // Load first 8 albums immediately
+const LAZY_LOAD_BATCH_SIZE = 6;     // Load 6 more albums per batch
+let currentLoadIndex = 0;           // Track which albums are loaded
+let isLoadingMore = false;          // Prevent concurrent loading
+let allAlbumsFullyLoaded = false;   // Track if all albums are loaded
+
+// Function to load all albums with lazy loading
 function loadAlbums() {
     try {
+        // Validation: Check if albumDirectories is defined
+        if (typeof albumDirectories === 'undefined' || !Array.isArray(albumDirectories)) {
+            console.error('❌ Album directories not found! Please ensure album-data.js is loaded correctly.');
+            showErrorMessage('Failed to load album configuration. Please refresh the page.');
+            toggleLoading(false);
+            return;
+        }
+
+        if (albumDirectories.length === 0) {
+            console.warn('⚠️ No albums found in directory configuration.');
+            showErrorMessage('No albums available. Please add albums to the collection.');
+            toggleLoading(false);
+            return;
+        }
+
+        console.log(`🎵 Starting album load: ${albumDirectories.length} albums discovered`);
+
         // Show loading state while initializing
         toggleLoading(true);
-        
-        // We'll use a counter to know when all albums are loaded
-        let loadedCount = 0;
-        
-        // Create script elements for each album
-        albumDirectories.forEach(directory => {
-            const script = document.createElement('script');
-            script.src = `asset/album-name/${directory}/albumData.js`;
-            
-            // When the script loads successfully
-            script.onload = function() {
-                // Get the variable name we expect to find
-                const varName = convertToVariableName(directory);
-                
-                // Check if the variable exists in window
-                if (window[varName]) {
-                    const albumData = window[varName];
-                    allAlbums.push(albumData);
-                    totalSongs += albumData.totalSongs;
-                } else {
-                    console.warn(`Album data for "${directory}" was loaded but variable "${varName}" was not found`);
-                }
-                
-                loadedCount++;
-                
-                // If all albums are loaded, update the UI
-                if (loadedCount === albumDirectories.length) {
-                    // Update dashboard stats
-                    document.getElementById('total-albums').textContent = allAlbums.length;
-                    document.getElementById('total-songs').textContent = totalSongs;
-                    
-                    // Display albums in tables
-                    displayAlbums();
-                    
-                    // Hide loading indicator
-                    toggleLoading(false);
-                }
-            };
-            
-            // Handle script loading errors
-            script.onerror = function() {
-                console.error(`Failed to load album data for "${directory}"`);
-                loadedCount++;
-                
-                // If all albums are loaded (or failed), update the UI
-                if (loadedCount === albumDirectories.length) {
-                    // Update dashboard stats
-                    document.getElementById('total-albums').textContent = allAlbums.length;
-                    document.getElementById('total-songs').textContent = totalSongs;
-                    
-                    // Display albums in tables
-                    displayAlbums();
-                    
-                    // Hide loading indicator
-                    toggleLoading(false);
-                }
-            };
-            
-            // Add the script to the page
-            document.body.appendChild(script);
-        });
-        
+
+        // Load initial batch of albums
+        loadNextBatch(INITIAL_ALBUM_LOAD_COUNT);
+
+        // Setup lazy loading observer for infinite scroll
+        setupLazyLoadObserver();
+
     } catch (error) {
-        console.error('Error loading albums:', error);
+        console.error('❌ Critical error loading albums:', error);
+        showErrorMessage('An unexpected error occurred. Please refresh the page.');
         toggleLoading(false);
     }
 }
 
+// Load next batch of albums
+function loadNextBatch(batchSize = LAZY_LOAD_BATCH_SIZE) {
+    if (isLoadingMore || allAlbumsFullyLoaded) {
+        return;
+    }
+
+    isLoadingMore = true;
+    const startIndex = currentLoadIndex;
+    const endIndex = Math.min(startIndex + batchSize, albumDirectories.length);
+    const albumsToLoad = endIndex - startIndex;
+
+    if (albumsToLoad === 0) {
+        allAlbumsFullyLoaded = true;
+        isLoadingMore = false;
+        console.log('✅ All albums loaded successfully');
+        return;
+    }
+
+    console.log(`📦 Loading albums ${startIndex + 1}-${endIndex} of ${albumDirectories.length}`);
+
+    let loadedCount = 0;
+    const loadedInBatch = [];
+
+    // Create script elements for albums in this batch
+    for (let i = startIndex; i < endIndex; i++) {
+        const directory = albumDirectories[i];
+            const script = document.createElement('script');
+            script.src = `asset/album-name/${directory}/albumData.js`;
+            
+            // When the script loads successfully
+        script.onload = function() {
+            // Get the variable name we expect to find
+            const varName = convertToVariableName(directory);
+
+            // Check if the variable exists in window
+            if (window[varName]) {
+                const albumData = window[varName];
+
+                // Validation: Check if album data has required fields
+                if (!albumData.name || !albumData.releaseDate || !albumData.songsData) {
+                    console.warn(`⚠️ Album "${directory}" is missing required fields`);
+                } else {
+                    allAlbums.push(albumData);
+                    loadedInBatch.push(albumData);
+                    totalSongs += albumData.totalSongs;
+                }
+            } else {
+                console.warn(`⚠️ Album data for "${directory}" was loaded but variable "${varName}" was not found`);
+            }
+
+            loadedCount++;
+
+            // If this batch is complete
+            if (loadedCount === albumsToLoad) {
+                currentLoadIndex = endIndex;
+                isLoadingMore = false;
+
+                // Check if this was the last batch
+                if (currentLoadIndex >= albumDirectories.length) {
+                    allAlbumsFullyLoaded = true;
+                }
+
+                // Update UI after each batch
+                updateDashboardStats();
+                displayAlbums();
+
+                // Hide loading indicator if initial batch is done
+                if (currentLoadIndex >= INITIAL_ALBUM_LOAD_COUNT) {
+                    toggleLoading(false);
+                }
+
+                console.log(`✅ Batch complete: ${loadedInBatch.length} albums loaded (Total: ${allAlbums.length}/${albumDirectories.length})`);
+            }
+        };
+
+        // Handle script loading errors
+        script.onerror = function() {
+            console.error(`❌ Failed to load album data for "${directory}"`);
+            loadedCount++;
+
+            // Continue even if this album failed
+            if (loadedCount === albumsToLoad) {
+                currentLoadIndex = endIndex;
+                isLoadingMore = false;
+
+                // Check if this was the last batch
+                if (currentLoadIndex >= albumDirectories.length) {
+                    allAlbumsFullyLoaded = true;
+                }
+
+                // Update UI after each batch
+                updateDashboardStats();
+                displayAlbums();
+
+                // Hide loading indicator if initial batch is done
+                if (currentLoadIndex >= INITIAL_ALBUM_LOAD_COUNT) {
+                    toggleLoading(false);
+                }
+            }
+        };
+
+        // Add the script to the page
+        document.body.appendChild(script);
+    }
+}
+
+// Setup Intersection Observer for lazy loading
+function setupLazyLoadObserver() {
+    // Create a sentinel element at the bottom of the page
+    const sentinel = document.createElement('div');
+    sentinel.id = 'lazy-load-sentinel';
+    sentinel.style.height = '1px';
+
+    // Find the albums content section
+    const allAlbumsBody = document.getElementById('all-albums-body');
+    if (allAlbumsBody && allAlbumsBody.parentElement) {
+        allAlbumsBody.parentElement.appendChild(sentinel);
+
+        // Create intersection observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !allAlbumsFullyLoaded && !isLoadingMore) {
+                    console.log('📜 Lazy loading triggered: Loading more albums...');
+                    loadNextBatch();
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '200px', // Start loading 200px before reaching the sentinel
+            threshold: 0
+        });
+
+        observer.observe(sentinel);
+        console.log('👁️ Lazy load observer initialized');
+    }
+}
+
+// Update dashboard statistics
+function updateDashboardStats() {
+    const totalAlbumsElement = document.getElementById('total-albums');
+    const totalSongsElement = document.getElementById('total-songs');
+
+    if (totalAlbumsElement) {
+        totalAlbumsElement.textContent = allAlbums.length;
+    }
+
+    if (totalSongsElement) {
+        totalSongsElement.textContent = totalSongs;
+    }
+}
+
+// Show error message to user
+function showErrorMessage(message) {
+    // Create error notification if it doesn't exist
+    let errorNotification = document.getElementById('error-notification');
+
+    if (!errorNotification) {
+        errorNotification = document.createElement('div');
+        errorNotification.id = 'error-notification';
+        errorNotification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #dc3545;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 10000;
+            max-width: 300px;
+        `;
+        document.body.appendChild(errorNotification);
+    }
+
+    errorNotification.textContent = message;
+    errorNotification.style.display = 'block';
+
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+        errorNotification.style.display = 'none';
+    }, 5000);
+}
+
 // Toggle loading state
-function toggleLoading(isLoading) {
+function toggleLoading(isLoading, message = 'Processing albums...') {
     const loadingIndicator = document.getElementById('loading-indicator');
     if (loadingIndicator) {
         if (isLoading) {
             loadingIndicator.classList.remove('hidden');
+            const loadingText = loadingIndicator.querySelector('span');
+            if (loadingText) {
+                // Show progress if lazy loading
+                if (currentLoadIndex > 0 && currentLoadIndex < albumDirectories.length) {
+                    loadingText.textContent = `Loading albums ${currentLoadIndex}/${albumDirectories.length}...`;
+                } else {
+                    loadingText.textContent = message;
+                }
+            }
         } else {
             loadingIndicator.classList.add('hidden');
         }
