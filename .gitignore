@@ -5,3 +5,7 @@
 *.txt 
 .claude/settings.local.json
 KIYORAKA-KEN-MUSIC-ALBUM-ANALYSIS.md
+instruction add album.md
+.gitignore
+add-album.md
+future-project.md

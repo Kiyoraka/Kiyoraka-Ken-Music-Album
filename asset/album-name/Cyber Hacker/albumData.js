@@ -2,7 +2,7 @@
 window.cyber_hacker_data = {
     folder: "Cyber Hacker",
     name: "サイバーハッカー：デジタルファントム (Cyber Hacker: Digital Phantom)",
-    releaseDate: "2025-11-17",
+    releaseDate: "2025-07-04",
     totalSongs: 7,
     coverArt: "asset/album-name/Cyber Hacker/Art.jpg",
     songsData: [
