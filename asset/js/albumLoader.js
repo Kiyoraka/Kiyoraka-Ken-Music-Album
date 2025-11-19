@@ -195,11 +195,17 @@ function updateDashboardStats() {
     const totalSongsElement = document.getElementById('total-songs');
 
     if (totalAlbumsElement) {
-        totalAlbumsElement.textContent = allAlbums.length;
+        // Show actual total from albumDirectories, not just loaded albums
+        totalAlbumsElement.textContent = albumDirectories.length;
     }
 
     if (totalSongsElement) {
-        totalSongsElement.textContent = totalSongs;
+        // Show loaded songs count with indicator if still loading
+        if (allAlbumsFullyLoaded) {
+            totalSongsElement.textContent = totalSongs;
+        } else {
+            totalSongsElement.textContent = totalSongs + '+';
+        }
     }
 }
 
